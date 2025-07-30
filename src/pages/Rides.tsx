@@ -5,36 +5,52 @@ import minibanner from "../assets/minibanner.png";
 import bgframe from "../assets/bg-frame.png";
 import SliderHeader from '../components/component/Header/SliderHeader';
 
-import trampoline from "../assets/trampoline.jpg";
-import arcade from "../assets/ride1Arcade.jpg"
-import crazybus from "../assets/ride2crazybus.jpg";
-import rockintug from "../assets/ride3rockintug.jpg";
-import playarea from "../assets/ride4playarea.jpg";
-import ballpit from "../assets/ride5ballpit.jpg";
-import delux3dkiddleride from "../assets/ride6delux3dkiddleride.jpg";
-import speedbocce from "../assets/ride7speedbocce.jpg";
-import jumping from "../assets/jumpin.jpg";
-import carousel from "../assets/ride8carousel.jpg";
-import hawaiiansurfing from "../assets/ride9hawaiiansurfing.jpg";
-import minitrainride from "../assets/ride10minitrainride.jpg";
-import boatride from "../assets/ride11boatride.jpg";
-import merrygoround from "../assets/ride12merrygoround.jpg";
-import disko from "../assets/ride13disko.jpg";
-import ride14 from "../assets/ride14.png"
-import ride15 from "../assets/ride15.png"
-import ride16 from "../assets/ride16.png"
-import ride17 from "../assets/ride17.png"
-import ride18 from "../assets/ride18.png"
-import ride19 from "../assets/ride19.png"
-import ride20 from "../assets/ride20.png"
-import ride21 from "../assets/ride21.png"
-import ride22 from "../assets/ride22.png"
-import ride23 from "../assets/ride23.png"
-import ride24 from "../assets/ride24.png"
-import ride25 from "../assets/ride25.png"
-import ride26 from "../assets/ride26.png"
-import ride27 from "../assets/ride27.png"
-import ride28 from "../assets/ride28.png"
+import ALLADDIN from "../assets/rides/ALLADDIN.png";
+import BIG_INFLATEABLE_SIDE from "../assets/rides/BIG INFLATEABLE SIDE.png";
+import BIG_INFLATEABLE from "../assets/rides/BIG INFLATEABLE.png";
+import BILLIARDS from "../assets/rides/BILLIARDS.png";
+import BOXING_AREA from "../assets/rides/BOXING AREA.png";
+import BUMBER_JEEP from "../assets/rides/BUMBER JEEP.png";
+import BUMBER_AREA from "../assets/rides/BUMPER BOAT.png";
+import BUMPER_CAR from "../assets/rides/BUMPER CAR.png";
+
+import BUMPER_CARS from "../assets/rides/BUMPER CARS.png";
+import CAMEL_RIDE from "../assets/rides/CAMEL RIDE.png";
+import CAR_RACING from "../assets/rides/CAR RACING.png";
+import CARNIVAL_BOOTH_GAMES from "../assets/rides/CARNIVAL BOOTH GAMES.png";
+import COOL_DROPS from "../assets/rides/COOL DROPS.png";
+import CRAZY_MOTOR from "../assets/rides/CRAZY MOTOR.png";
+import DISCO_TAGADA from "../assets/rides/DISCO TAGADA.png";
+import GO_CART_RIDES from "../assets/rides/GO CART RIDES.png";
+
+import GO_CART from "../assets/rides/GO CART.png";
+import GUN_SHOOTING from "../assets/rides/GUN SHOOTING.png";
+import HAPPY_SWING_IMAGE_2 from "../assets/rides/HAPPY SWING IMAGE 2.png";
+import HAPPY_SWING from "../assets/rides/HAPPY SWING.png";
+import HONEY_SWING from "../assets/rides/HONEY SWING.png";
+import JURRASIC_PARK_1 from "../assets/rides/JURRASIC PARK 1.png";
+import JURRASIC_PARK from "../assets/rides/JURRASIC PARK.png";
+import KIDDIE_RIDES from "../assets/rides/KIDDIE RIDES.png";
+
+import LANE_MASTER from "../assets/rides/LANE MASTER.png";
+import MAGIC_BALL from "../assets/rides/MAGIC BALL.png";
+import MINI_TRAIN_RIDE from "../assets/rides/MINI TRAIN RIDE.png";
+import MINI_TRAIN from "../assets/rides/MINI TRAIN.png";
+import OCTOPUS_IMAGE_2 from "../assets/rides/OCTOPUS IMAGE 2.png";
+import OCTOPUS_IMAGE_3 from "../assets/rides/OCTOPUS IMAGE 3.png";
+import OCTOPUS_IMAGE_4 from "../assets/rides/OCTOPUS IMAGE 4.png";
+import OCTOPUS from "../assets/rides/OCTOPUS.png";
+
+import RACING_BICK from "../assets/rides/RACING BICK.png";
+import ROCK_N_TUG from "../assets/rides/ROCK N TUG.png";
+import SOFT_PLAY from "../assets/rides/SOFT PLAY.png";
+import TRAFIC_JAM from "../assets/rides/TRAFIC JAM.png";
+import TRAMPOLINE_PARK from "../assets/rides/TRAMPOLINE PARK.png";
+import TWISTER from "../assets/rides/TWISTER.png";
+import VR_1 from "../assets/rides/VR 1.png";
+import VR_2 from "../assets/rides/VR 2.png";
+import VR_3 from "../assets/rides/VR 3.png";
+import WHACK_AND_WIN from "../assets/rides/WHACK AND WIN.png";
 
 import { LanguageContext } from '../context/LanguageContext';
 import en from "../locales/en.json";
@@ -58,56 +74,68 @@ const cardsData: RideCard[] = [
   {
     key: 'trampoline',
     variants: [
-      { img: trampoline, label: 'ride_trampoline1' },
-      { img: arcade, label: 'ride_trampoline2' },
-      { img: crazybus, label: 'ride_trampoline3' },
-      { img: ride14, label: 'ride_trampoline4' },
-      { img: ride15, label: 'ride_trampoline5' },
-      { img: ride28, label: 'ride_trampoline6' },
+      { img: ALLADDIN, label: 'ride_trampoline1' },
+      { img: BIG_INFLATEABLE_SIDE, label: 'ride_trampoline2' },
+      { img: BIG_INFLATEABLE, label: 'ride_trampoline3' },
+      { img: BILLIARDS, label: 'ride_trampoline4' },
+      { img: BOXING_AREA, label: 'ride_trampoline5' },
+      { img: BUMBER_JEEP, label: 'ride_trampoline6' },
+      { img: BUMBER_AREA, label: 'ride_trampoline7' },
+      { img: BUMPER_CAR, label: 'ride_trampoline8' },
     ],
   },
   {
     key: 'carrom',
     variants: [
-      { img: rockintug, label: 'ride_carrom1' },
-      { img: playarea, label: 'ride_carrom2' },
-      { img: ballpit, label: 'ride_carrom3' },
-      { img: ride16, label: 'ride_carrom4' },
-      { img: ride17, label: 'ride_carrom5' },
-      { img: ride27, label: 'ride_carrom6' },
+      { img: BUMPER_CARS, label: 'ride_carrom1' },
+      { img: CAMEL_RIDE, label: 'ride_carrom2' },
+      { img: CAR_RACING, label: 'ride_carrom3' },
+      { img: CARNIVAL_BOOTH_GAMES, label: 'ride_carrom4' },
+      { img: COOL_DROPS, label: 'ride_carrom5' },
+      { img: CRAZY_MOTOR, label: 'ride_carrom6' },
+      { img: DISCO_TAGADA, label: 'ride_carrom6' },
+      { img: GO_CART_RIDES, label: 'ride_carrom6' },
     ],
   },
   {
     key: 'jumping',
     variants: [
-      { img: delux3dkiddleride, label: 'ride_jumping1' },
-      { img: speedbocce, label: 'ride_jumping2' },
-      { img: jumping, label: 'ride_jumping3' },
-      { img: ride18, label: 'ride_jumping4' },
-      { img: ride19, label: 'ride_jumping5' },
-      { img: ride26, label: 'ride_jumping6' },
+      { img: GO_CART, label: 'ride_jumping1' },
+      { img: GUN_SHOOTING, label: 'ride_jumping2' },
+      { img: HAPPY_SWING_IMAGE_2, label: 'ride_jumping3' },
+      { img: HAPPY_SWING, label: 'ride_jumping4' },
+      { img: HONEY_SWING, label: 'ride_jumping5' },
+      { img: JURRASIC_PARK_1, label: 'ride_jumping6' },
+      { img: JURRASIC_PARK, label: 'ride_jumping6' },
+      { img: KIDDIE_RIDES, label: 'ride_jumping6' },
     ],
   },
   {
     key: 'karting',
     variants: [
-      { img: carousel, label: 'ride_karting1' },
-      { img: hawaiiansurfing, label: 'ride_karting2' },
-      { img: minitrainride, label: 'ride_karting3' },
-      { img: ride20, label: 'ride_karting4' },
-      { img: ride21, label: 'ride_karting5' },
-      { img: ride25, label: 'ride_karting6' },
+      { img: LANE_MASTER, label: 'ride_karting1' },
+      { img: MAGIC_BALL, label: 'ride_karting2' },
+      { img: MINI_TRAIN_RIDE, label: 'ride_karting3' },
+      { img: MINI_TRAIN, label: 'ride_karting4' },
+      { img: OCTOPUS_IMAGE_2, label: 'ride_karting5' },
+      { img: OCTOPUS_IMAGE_3, label: 'ride_karting6' },
+      { img: OCTOPUS_IMAGE_4, label: 'ride_karting7' },
+      { img: OCTOPUS, label: 'ride_karting8' },
     ],
   },
   {
     key: 'football',
     variants: [
-      { img: boatride, label: 'ride_football1' },
-      { img: merrygoround, label: 'ride_football2' },
-      { img: disko, label: 'ride_football3' },
-      { img: ride22, label: 'ride_football4' },
-      { img: ride23, label: 'ride_football5' },
-      { img: ride24, label: 'ride_football6' },
+      { img: RACING_BICK, label: 'ride_football1' },
+      { img: ROCK_N_TUG, label: 'ride_football2' },
+      { img: SOFT_PLAY, label: 'ride_football3' },
+      { img: TRAFIC_JAM, label: 'ride_football4' },
+      { img: TRAMPOLINE_PARK, label: 'ride_football5' },
+      { img: TWISTER, label: 'ride_football6' },
+      { img: VR_1, label: 'ride_football6' },
+      { img: VR_2, label: 'ride_football6' },
+      { img: VR_3, label: 'ride_football6' },
+      { img: WHACK_AND_WIN, label: 'ride_football6' },
     ],
   },
 ];
