@@ -111,8 +111,10 @@ export default function ContactUs() {
               <div className="text-green-600 text-3xl mb-2 flex justify-center">
                 <img src={contact} alt="Contact" className="h-10" />
               </div>
-              <p className="text-gray-800 font-semibold">+973 4040 8556</p>
-              <p className="text-gray-800 font-semibold">kidskingdom@gmail.com</p>
+              <p className="text-gray-800 font-semibold">+973 17227476 </p>
+              <p className="text-gray-800 font-semibold">+973 17343976</p>
+              <p className="text-gray-800 font-semibold">info@kidskingdomwll.com </p>
+              <p className="text-gray-800 font-semibold"> kmkbrn@gmail.com</p>
             </div>
 
             <div className="bg-white rounded-lg p-5 shadow-sm border" data-aos="fade-up"
@@ -120,8 +122,18 @@ export default function ContactUs() {
               <div className="text-green-600 text-3xl mb-2 flex justify-center">
                 <img src={time} alt="Time" className="h-10" />
               </div>
-              <p className="text-gray-800 font-semibold">{t("weekday_timing")}</p>
-              <p className="text-gray-800 font-semibold">{t("weekend_timing")}</p>
+              <div className="space-y-4 text-gray-800 font-semibold">
+                {/* Manama and Marina */}
+                <p className='mb-1'>{t("timing_mana_heading")}</p>
+                <p className='mb-1'>{t("timing_mana_weekends")}</p>
+                <p className='mb-1'>{t("timing_mana_weekdays")}</p>
+
+                {/* Hidd and Riffa */}
+                <p className="mt-4 mb-1">{t("timing_hidd_heading")}</p>
+                <p className='mb-1'>{t("timing_hidd_weekdays")}</p>
+                <p className='mb-1'>{t("timing_hidd_weekends")}</p>
+              </div>
+
             </div>
 
             <div className="md:col-span-2 bg-white rounded-lg p-5 shadow-sm border" data-aos="fade-up"

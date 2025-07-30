@@ -91,11 +91,15 @@
   animation: scroll-left 10s linear infinite;
 }
 
+.marquee-track-nav {
+  animation: scroll-left 30s linear infinite;
+}
+
 .marquee-track-reverse {
   animation: scroll-right 10s linear infinite;
 }
 .marquee-track-reverse-nav {
-  animation: scroll-right-nav 10s linear infinite;
+  animation: scroll-right-nav 30s linear infinite;
 }
 
 @keyframes scroll-left {

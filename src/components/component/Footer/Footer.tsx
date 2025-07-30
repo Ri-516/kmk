@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Mail, Phone, Clock, Facebook, Instagram, Youtube } from "lucide-react";
+import { Mail, Phone, Instagram } from "lucide-react";
 import { LanguageContext } from "../../../context/LanguageContext";
 import footerbg from "../../../assets/footer-bg.jpg";
 import WebLogoEng from "../../../assets/Web_Logo_KMK_Eng_notext.png";
@@ -51,20 +51,39 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 lg:gap-20 text-base md:text-lg lg:text-xl" data-aos="fade-up"
             data-aos-delay="400">
-            <div className="flex items-center gap-2">
-              <Phone size={20} className="text-[#FFD42D]" />
-              <a href={`tel:97340408556`}>
-                <span dir={lang === "ar" ? "rtl" : "ltr"}>+973 4040 8556</span>
-              </a>
+
+           
+
+            <div className="flex flex-col items-start gap-1">
+              <div className="flex items-center gap-2">
+                <Mail size={20} className="text-[#FFD42D]" />
+                <span>{t("footer_email1")}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={20} className="text-[#FFD42D]" />
+                <span>{t("footer_email2")}</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Mail size={20} className="text-[#FFD42D]" />
-              {t("footer_email")}
+
+             <div className="flex flex-col items-start gap-1">
+              <div className="flex items-center gap-2">
+                <Phone size={20} className="text-[#FFD42D]" />
+                <a href="tel:97340408556">
+                  <span dir={lang === "ar" ? "rtl" : "ltr"}>{t("footer_phone1")}</span>
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Phone size={20} className="text-[#FFD42D]" />
+                <a href="tel:97340408557">
+                  <span dir={lang === "ar" ? "rtl" : "ltr"}>{t("footer_phone2")}</span>
+                </a>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
+
+            {/* <div className="flex items-center gap-2">
               <Clock size={20} className="text-[#FFD42D]" />
               {t("footer_timing")}
-            </div>
+            </div> */}
           </div>
 
           {/* Social Media */}
@@ -73,15 +92,15 @@ export default function Footer() {
               {t("footer_follow")}
             </h1>
             <div className="flex justify-center gap-3 md:gap-4 lg:gap-6">
-              <a href="#" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
+              {/* <a href="#" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
                 <Facebook className="text-black" size={24} />
-              </a>
-              <a href="#" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
+              </a> */}
+              <a href="https://www.instagram.com/kidskingdombh?igsh=ODBrenF1dWZzcTI2" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
                 <Instagram className="text-black" size={24} />
               </a>
-              <a href="#" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
+              {/* <a href="#" className="bg-[#FFD42D] p-2 md:p-3 lg:p-4 rounded-lg">
                 <Youtube className="text-black" size={24} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

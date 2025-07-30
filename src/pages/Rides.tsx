@@ -1,11 +1,9 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
+import Slider from "react-slick";
 import Footer from '../components/component/Footer/Footer';
-// import bannerVideo from "../assets/bannerVideo.mp4";
 import minibanner from "../assets/minibanner.png";
 import bgframe from "../assets/bg-frame.png";
 import SliderHeader from '../components/component/Header/SliderHeader';
-// import carrom from "../assets/carrom.png";
-// import karting from "../assets/karting.png";
 
 import trampoline from "../assets/trampoline.jpg";
 import arcade from "../assets/ride1Arcade.jpg"
@@ -40,6 +38,9 @@ import ride28 from "../assets/ride28.png"
 
 import { LanguageContext } from '../context/LanguageContext';
 import en from "../locales/en.json";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 type RideLabelKeys = keyof typeof en;
 
@@ -112,61 +113,183 @@ const cardsData: RideCard[] = [
 ];
 
 export default function Rides() {
-  // ✅ Always call hooks at the top
-  const [currentIndices, setCurrentIndices] = useState<number[]>(Array(cardsData.length).fill(0));
-  const [flipping, setFlipping] = useState<boolean[]>(Array(cardsData.length).fill(false));
-
-  useEffect(() => {
-    let cardIndex = 0;
-
-    const flipNextCard = () => {
-      setFlipping((prev) => {
-        const newState = [...prev];
-        newState[cardIndex] = true;
-        return newState;
-      });
-
-      setTimeout(() => {
-        setCurrentIndices((prev) => {
-          const newIndices = [...prev];
-          const totalVariants = cardsData[cardIndex].variants.length;
-          newIndices[cardIndex] = (newIndices[cardIndex] + 1) % totalVariants;
-          return newIndices;
-        });
-
-        setFlipping((prev) => {
-          const newState = [...prev];
-          newState[cardIndex] = false;
-          return newState;
-        });
-
-        cardIndex = (cardIndex + 1) % cardsData.length;
-        setTimeout(flipNextCard, 1600);
-      }, 500);
-    };
-
-    flipNextCard();
-  }, []);
-
-  // ✅ Use lang context only after hooks
   const langContext = useContext(LanguageContext);
   if (!langContext) return null;
   const { t } = langContext;
 
   const renderCard = (cardIndex: number, customClass: string = '') => (
     <div className={`relative ${customClass}`}>
-      <div className={`flip-card w-full h-full ${flipping[cardIndex] ? 'flip' : ''}`}>
-        <img
-          src={cardsData[cardIndex].variants[currentIndices[cardIndex]].img}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
-          {t(cardsData[cardIndex].variants[currentIndices[cardIndex]].label)}
-        </span>
-      </div>
+      <img
+        src={cardsData[cardIndex].variants[0].img}
+        alt=""
+        className="w-full h-full object-cover"
+      />
+      <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+        {t(cardsData[cardIndex].variants[0].label)}
+      </span>
     </div>
   );
+
+  const renderSlider = () => {
+    const card = cardsData[0];
+
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    return (
+      <Slider {...settings} className="h-full">
+        {card.variants.map((variant, idx) => (
+          <div key={idx} className="relative h-full">
+            <img
+              src={variant.img}
+              alt=""
+              className="w-full h-[600px] object-cover"
+            />
+            <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+              {t(variant.label)}
+            </span>
+          </div>
+        ))}
+      </Slider>
+    );
+  };
+
+  const renderSliderForCard = (cardIndex: number) => {
+    const card = cardsData[cardIndex];
+
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    return (
+      <Slider {...settings} className="h-full">
+        {card.variants.map((variant, idx) => (
+          <div key={idx} className="relative h-full">
+            <img
+              src={variant.img}
+              alt=""
+              className="w-full h-[360px] object-cover"
+            />
+            <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+              {t(variant.label)}
+            </span>
+          </div>
+        ))}
+      </Slider>
+    );
+  };
+
+    const renderSliderForCard3 = (cardIndex: number) => {
+    const card = cardsData[cardIndex];
+
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    return (
+      <Slider {...settings} className="h-full">
+        {card.variants.map((variant, idx) => (
+          <div key={idx} className="relative h-full">
+            <img
+              src={variant.img}
+              alt=""
+              className="w-full h-[360px] object-cover"
+            />
+            <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+              {t(variant.label)}
+            </span>
+          </div>
+        ))}
+      </Slider>
+    );
+  };
+
+    const renderSliderForCard4 = (cardIndex: number) => {
+    const card = cardsData[cardIndex];
+
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    return (
+      <Slider {...settings} className="h-full">
+        {card.variants.map((variant, idx) => (
+          <div key={idx} className="relative h-full">
+            <img
+              src={variant.img}
+              alt=""
+              className="w-full h-[240px] object-cover"
+            />
+            <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+              {t(variant.label)}
+            </span>
+          </div>
+        ))}
+      </Slider>
+    );
+  };
+
+    const renderSliderForCard5 = (cardIndex: number) => {
+    const card = cardsData[cardIndex];
+
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+
+    return (
+      <Slider {...settings} className="h-full">
+        {card.variants.map((variant, idx) => (
+          <div key={idx} className="relative h-full">
+            <img
+              src={variant.img}
+              alt=""
+              className="w-full h-[240px] object-cover"
+            />
+            <span className="absolute bottom-0 right-0 bg-[#009D48] text-white text-xl px-3 py-1">
+              {t(variant.label)}
+            </span>
+          </div>
+        ))}
+      </Slider>
+    );
+  };
+
 
   return (
     <div>
@@ -203,15 +326,15 @@ export default function Rides() {
       <section className="mx-auto p-4 bg-[#F4F4F4] border-none">
         {/* Desktop Layout */}
         <div className="hidden md:flex h-[600px]">
-          <div className="w-[30%] h-full">{renderCard(0, 'h-full')}</div>
+          <div className="w-[30%] h-full overflow-hidden">{renderSlider()}</div>
           <div className="w-[70%] flex flex-col">
             <div className="flex h-[60%]">
-              <div className="w-[60%]">{renderCard(1, 'h-full')}</div>
-              <div className="w-[40%]">{renderCard(2, 'h-full')}</div>
+              <div className="w-[60%]">{renderSliderForCard(1)}</div>
+              <div className="w-[40%]">{renderSliderForCard3(2)}</div>
             </div>
             <div className="flex h-[40%]">
-              <div className="w-[50%]">{renderCard(3, 'h-full')}</div>
-              <div className="w-[50%]">{renderCard(4, 'h-full')}</div>
+              <div className="w-[50%]">{renderSliderForCard4(3)}</div>
+              <div className="w-[50%]">{renderSliderForCard5(4, )}</div>
             </div>
           </div>
         </div>
@@ -225,7 +348,6 @@ export default function Rides() {
           <div>{renderCard(4, 'h-[200px]')}</div>
         </div>
       </section>
-
 
       <Footer />
     </div>

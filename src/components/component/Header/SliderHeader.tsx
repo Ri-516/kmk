@@ -3,6 +3,7 @@ import { Button } from "../../ui/button";
 import { ChevronDown, Phone, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import WebLogoEng from "../../../assets/Web_Logo_KMK_Eng.png";
+import WebLogoArb from "../../../assets/Web_Logo_KMK_Arb.png";
 import manama from "../../../assets/Manama.png";
 import marina from "../../../assets/marinabeach.png";
 import hidd from "../../../assets/hidd.png";
@@ -17,7 +18,7 @@ export default function SliderHeader() {
   if (!langContext) return null;
   const { lang, toggleLang, t } = langContext;
 
-  const marqueeClass = lang === "ar" ? "marquee-track-reverse-nav" : "marquee-track";
+  const marqueeClass = lang === "ar" ? "marquee-track-reverse-nav" : "marquee-track-nav";
   return (
 
 
@@ -25,7 +26,11 @@ export default function SliderHeader() {
       {/* Top Bar */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center py-2 text-[#313131] text-sm lg:text-xl">
         <div className="flex items-center gap-4 md:gap-20 flex-wrap justify-center md:justify-start" data-aos="fade-up">
-          <img src={WebLogoEng} alt="Logo" className="w-20 h-auto" />
+          <img
+            src={lang === "ar" ? WebLogoArb : WebLogoEng}
+            alt="Logo"
+            className="w-20 h-auto"
+          />
         </div>
 
         <div className="flex items-center gap-4 md:gap-20 mt-2 md:mt-0">
@@ -39,10 +44,18 @@ export default function SliderHeader() {
             <div className="bg-[#009D48] p-1 rounded">
               <Phone size={16} className="text-white" />
             </div>
-            <a href={`tel:${lang === "ar" ? "97340408556" : "97340408556"}`}>
-              <span>{lang === "ar" ? "+973 4040 8556" : "+973 4040 8556"}</span>
-            </a>
+            <div className="flex flex-row leading-tight">
+              <a href="tel:97317227476" className="hover:underline">
+                <span>{lang === "ar" ? "+973 17227476" : "+973 17227476"}</span>
+              </a>&nbsp;
+              , &nbsp;
+
+              <a href="tel:97317227477" className="hover:underline">
+                <span>{lang === "ar" ? "+973 17227477" : "+973 17227477"}</span>
+              </a>
+            </div>
           </div>
+
           {/* <Button className="bg-[#FFD42D] text-black hover:bg-yellow-300 shadow-md font-bold text-lg hidden md:inline-flex" data-aos="fade-up">
             {t("card_top_up")}
           </Button> */}
@@ -51,20 +64,24 @@ export default function SliderHeader() {
 
       {/* Marquee */}
       <div className="marquee-container overflow-hidden" data-aos="fade-up">
-        <div className={`marquee-track ${marqueeClass}`}>
-          <span className="marquee-text">
-            {`${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}`}
+        <div className={`marquee-track-nav ${marqueeClass}`}>
+          <span className="marquee-text whitespace-nowrap">
+            <span className="text-red-500">{t("marquee_text1")}</span>
+            <span className="px-4"></span>
+            <span className="text-yellow-500">{t("marquee_text2")}</span>
+            <span className="px-4"></span>
+            <span className="text-red-500">{t("marquee_text3")}</span>
+            <span className="px-4"></span>
+            <span className="text-yellow-500">{t("marquee_text4")}</span>
           </span>
-          <span className="marquee-text">
-            {`${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}`}
-          </span>
-        </div>
-        <div className={`marquee-track ${marqueeClass}`}>
-          <span className="marquee-text">
-            {`${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}`}
-          </span>
-          <span className="marquee-text">
-            {`${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0${t("marquee_text")}`}
+          <span className="marquee-text whitespace-nowrap">
+            <span className="text-red-500">{t("marquee_text1")}</span>
+            <span className="px-4"></span>
+            <span className="text-yellow-500">{t("marquee_text2")}</span>
+            <span className="px-4"></span>
+            <span className="text-red-500">{t("marquee_text3")}</span>
+            <span className="px-4"></span>
+            <span className="text-yellow-500">{t("marquee_text4")}</span>
           </span>
         </div>
       </div>
