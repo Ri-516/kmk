@@ -66,20 +66,20 @@ export default function SliderHeader() {
       <div className="marquee-container overflow-hidden" data-aos="fade-up">
         <div className={`marquee-track-nav ${marqueeClass}`}>
           <span className="marquee-text whitespace-nowrap">
-            <span className="text-red-500">{t("marquee_text1")}</span>
+            <span className="text-white">{t("marquee_text1")}</span>
             <span className="px-4"></span>
             <span className="text-yellow-500">{t("marquee_text2")}</span>
             <span className="px-4"></span>
-            <span className="text-red-500">{t("marquee_text3")}</span>
+            <span className="text-white">{t("marquee_text3")}</span>
             <span className="px-4"></span>
             <span className="text-yellow-500">{t("marquee_text4")}</span>
           </span>
           <span className="marquee-text whitespace-nowrap">
-            <span className="text-red-500">{t("marquee_text1")}</span>
+            <span className="text-white">{t("marquee_text1")}</span>
             <span className="px-4"></span>
             <span className="text-yellow-500">{t("marquee_text2")}</span>
             <span className="px-4"></span>
-            <span className="text-red-500">{t("marquee_text3")}</span>
+            <span className="text-white">{t("marquee_text3")}</span>
             <span className="px-4"></span>
             <span className="text-yellow-500">{t("marquee_text4")}</span>
           </span>
