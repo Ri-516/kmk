@@ -36,10 +36,12 @@ export default function SliderHeader() {
         <div className="flex items-center gap-4 md:gap-20 mt-2 md:mt-0">
           <button
             onClick={toggleLang}
-            className="bg-white text-black px-4 py-2 rounded" data-aos="fade-up"
+            className="bg-white text-black px-4 py-2 rounded hidden md:block" data-aos="fade-up"
           >
             {t("lang_switch")}
           </button>
+
+
           <div className="flex items-center gap-1 hidden md:inline-flex" data-aos="fade-up">
             <div className="bg-[#009D48] p-1 rounded">
               <Phone size={16} className="text-white" />
@@ -178,12 +180,22 @@ export default function SliderHeader() {
               <li><Link to="/contact">{t("contact_us")}</Link></li>
               <li><Link to="/dining">{t("dining")}</Link></li>
               <li className="mx-auto">
-                <Link to="/dining">
-                  <Button className="bg-[#FFD42D] text-black hover:bg-yellow-300 shadow-md font-bold text-lg">
-                    {t("card_top_up")}
-                  </Button>
-                </Link>
+                <div className="flex flex-wrap justify-center items-center gap-4">
+                  <Link to="/">
+                    <Button className="bg-[#FFD42D] text-black hover:bg-yellow-300 shadow-md font-bold text-lg px-6 py-3 rounded-lg">
+                      {t("card_top_up")}
+                    </Button>
+                  </Link>
+                  <button
+                    onClick={toggleLang}
+                    className="bg-white text-black font-bold text-lg px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition-all"
+                    data-aos="fade-up"
+                  >
+                    {t("lang_switch")}
+                  </button>
+                </div>
               </li>
+
             </ul>
           )}
         </div>

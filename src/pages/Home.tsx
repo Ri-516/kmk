@@ -1,5 +1,6 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
+
 
 import ChooseUs from '../components/component/ChooseUs/ChooseUs';
 import Footer from '../components/component/Footer/Footer';
@@ -34,6 +35,7 @@ import video1 from '../assets/home-video1.mp4';
 import video2 from '../assets/home-video2.mp4';
 import video3 from '../assets/home-video3.mp4';
 import { Link } from 'react-router-dom';
+import popupImage from '../assets/offer.png';
 
 const allImages = [minislide1, minislide2, minislide3, minislide4, minislide5, minislide6, minislide7, minislide8];
 const imagesTop = allImages.slice(0, 4);
@@ -41,6 +43,7 @@ const imagesBottom = allImages.slice(4, 8);
 
 export default function Home() {
     const langContext = useContext(LanguageContext);
+    const [showPopup, setShowPopup] = useState(false);
 
     if (!langContext) {
         throw new Error("LanguageContext is not available. Did you wrap your app in LanguageProvider?");
@@ -50,6 +53,7 @@ export default function Home() {
     const sliderRef = useRef<HTMLDivElement>(null);
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const [playingIndex, setPlayingIndex] = useState<number | null>(null);
+
 
     const togglePlay = (index: number) => {
         const video = videoRefs.current[index];
@@ -76,15 +80,43 @@ export default function Home() {
         }
     };
 
+    // Show popup 5s after load, hide it after another 5s
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPopup(true);
+        }, 5000); // Show popup after 5 seconds
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div>
             <SliderHeader />
+            {/* Popup Modal */}
+            {showPopup && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm bg-black/30">
+                    <div className="bg-white rounded-lg shadow-xl p-4 w-[90%] max-w-sm relative">
+                        <button
+                            onClick={() => setShowPopup(false)}
+                            className="absolute top-1 right-2 text-4xl text-gray-600 hover:text-red-500"
+                        >
+                            &times;
+                        </button>
+                        <img
+                            src={popupImage}
+                            alt="Special Offer"
+                            className="w-full h-auto max-h-[80vh] object-contain rounded"
+                        />
+                    </div>
+                </div>
+            )}
+
 
             {/* Banner */}
             <section data-aos="fade-in">
                 <div className="relative h-[300px] md:h-[140dvh] w-full overflow-hidden">
                     <video autoPlay muted loop playsInline poster={minibanner} className="absolute inset-0 w-full h-full object-cover">
-                        <source src="" type="video/mp4" />
+                        <source src="#" type="video/mp4" />
                     </video>
 
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center pb-[0px] md:pb-[200px] lg:pb-[300px]">

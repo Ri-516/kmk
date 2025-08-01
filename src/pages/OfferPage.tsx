@@ -89,24 +89,24 @@ export default function OfferPage() {
       </section>
 
       {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-10 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-4 max-w-xl w-full relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-1 right-2 text-gray-600 hover:text-red-500 text-4xl font-bold"
-            >
-              &times;
-            </button>
-            <img
-              src={sandesh}
-              // style={{height: "280px", width:"280px"}}
-              alt="Detailed View"
-              className="w-full h-[80dvh] rounded-lg"
-            />
+        {showModal && (
+          <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm bg-black/30">
+            <div className="bg-white rounded-lg shadow-xl p-4 max-w-sm w-full relative">
+              <button
+                onClick={closeModal}
+                className="absolute top-1 right-2 text-gray-600 hover:text-red-500 text-4xl font-bold"
+              >
+                &times;
+              </button>
+              <img
+                src={sandesh}
+                // style={{height: "280px", width:"280px"}}
+                alt="Detailed View"
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       <Footer />
     </div>
