@@ -1,14 +1,28 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import Footer from "../components/component/Footer/Footer";
 import offerImg from "../assets/offer-img.png";
 // import bannerVideo from "../assets/bannerVideo.mp4";
 import bgframe from "../assets/bg-frame.png";
 import SliderHeader from "../components/component/Header/SliderHeader";
-import Minibanner from "../assets/minibanner.png"
+import Minibanner from "../assets/minibanner.png";
+import sandesh from "../assets/offer.png"
 
 export default function OfferPage() {
   const { t } = useContext(LanguageContext)!;
+
+  const [showModal, setShowModal] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState("");
+
+  const handleViewDetails = () => {
+    // setSelectedImage(imgSrc);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    // setSelectedImage(imgSrc);
+  };
 
   return (
     <div>
@@ -63,7 +77,8 @@ export default function OfferPage() {
                   <p className="text-gray-800 mt-2 text-sm md:text-base">
                     {t("offer_description")}
                   </p>
-                  <button className="mt-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-2 px-4 rounded shadow">
+                  <button onClick={() => handleViewDetails()}
+                    className="mt-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold py-2 px-4 rounded shadow">
                     {t("view_details")}
                   </button>
                 </div>
@@ -72,6 +87,26 @@ export default function OfferPage() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-10 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-4 max-w-xl w-full relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-1 right-2 text-gray-600 hover:text-red-500 text-4xl font-bold"
+            >
+              &times;
+            </button>
+            <img
+              src={sandesh}
+              // style={{height: "280px", width:"280px"}}
+              alt="Detailed View"
+              className="w-full h-[80dvh] rounded-lg"
+            />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
